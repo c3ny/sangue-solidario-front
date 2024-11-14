@@ -55,6 +55,62 @@ const cardsPatients = [
   },
 ];
 
+function createSingleSolicitationCard({ name, bloodType, image }) {
+  const cardsContainers = document.querySelector("#solicitationsCards");
+  const card = document.createElement("div");
+
+  card.setAttribute(
+    "class",
+    "card border-0 shadow-sm rounded-3 p-3 d-flex flex-row align-items-center mb-3 bg-light"
+  );
+
+  const imageElement = document.createElement("img");
+
+  imageElement.setAttribute("class", "rounded-circle me-3");
+  imageElement.setAttribute("src", image);
+  imageElement.setAttribute("alt", "Foto do Paciente");
+  imageElement.setAttribute(
+    "style",
+    "width: 80px; height: 80px; object-fit: cover"
+  );
+
+  card.appendChild(imageElement);
+
+  const textContainer = document.createElement("div");
+
+  textContainer.setAttribute("class", "flex-grow-1");
+
+  const nameElement = document.createElement("h5");
+  nameElement.setAttribute("class", "mb-1 fw-bold");
+
+  nameElement.textContent = name;
+
+  const bloodTypeElement = document.createElement("p");
+
+  bloodTypeElement.setAttribute("class", "mb-0 text-danger");
+
+  const icon = document.createElement("i");
+
+  icon.setAttribute("class", "bi bi-droplet");
+
+  bloodTypeElement.appendChild(icon);
+
+  bloodTypeElement.innerHTML += bloodType;
+
+  textContainer.appendChild(nameElement);
+  textContainer.appendChild(bloodTypeElement);
+
+  card.appendChild(textContainer);
+
+  const button = document.createElement("button");
+
+  button.setAttribute("class", "btn btn-danger px-4");
+  button.textContent = "Quero doar";
+
+  card.appendChild(button);
+  cardsContainers.appendChild(card);
+}
+
 function createCards() {
   const cardsContainers = document.querySelector("#solicitationsCards");
 
@@ -63,55 +119,11 @@ function createCards() {
   }
 
   for (const patient of cardsPatients) {
-    const card = document.createElement("div");
-
-    card.setAttribute(
-      "class",
-      "card border-0 shadow-sm rounded-3 p-3 d-flex flex-row align-items-center mb-3 bg-light"
-    );
-
-    const image = document.createElement("img");
-
-    image.setAttribute("class", "rounded-circle me-3");
-    image.setAttribute("src", patient.image);
-    image.setAttribute("alt", "Foto do Paciente");
-    image.setAttribute("style", "width: 80px; height: 80px; object-fit: cover");
-
-    card.appendChild(image);
-
-    const textContainer = document.createElement("div");
-
-    textContainer.setAttribute("class", "flex-grow-1");
-
-    const name = document.createElement("h5");
-    name.setAttribute("class", "mb-1 fw-bold");
-
-    name.textContent = patient.name;
-
-    const bloodType = document.createElement("p");
-
-    bloodType.setAttribute("class", "mb-0 text-danger");
-
-    const icon = document.createElement("i");
-
-    icon.setAttribute("class", "bi bi-droplet");
-
-    bloodType.appendChild(icon);
-
-    bloodType.innerHTML += patient.bloodType;
-
-    textContainer.appendChild(name);
-    textContainer.appendChild(bloodType);
-
-    card.appendChild(textContainer);
-
-    const button = document.createElement("button");
-
-    button.setAttribute("class", "btn btn-danger px-4");
-    button.textContent = "Quero doar";
-
-    card.appendChild(button);
-    cardsContainers.appendChild(card);
+    createSingleSolicitationCard({
+      name: patient.name,
+      image: patient.image,
+      bloodType: patient.bloodType,
+    });
   }
 }
 
