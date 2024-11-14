@@ -42,7 +42,7 @@ p.previa-blog {
 p.previa-blog {
     overflow: hidden;
    display: -webkit-box;
-   -webkit-line-clamp: 3; /* number of lines to show */
+   -webkit-line-clamp: 3; /* número de linhas para exibir */
            line-clamp: 3; 
    -webkit-box-orient: vertical;
 }
@@ -61,4 +61,11 @@ p.previa-blog {
     color: #9b9b9b;
     font-style: italic;
 }
+<<<<<<< HEAD
 >>>>>>> 1947645 (Finalização da home)
+=======
+
+.avatar{
+    border:#dc3545 solid 4px;
+}
+>>>>>>> ad97537 (Criação de página de usuário, página de contato e alteração no script de mapa.)

@@ -29,3 +29,20 @@ window.addEventListener("scroll", () => {
         backToTopBtn.style.display = "none";
     }
 });
+
+// Função para abrir o seletor de arquivos ao clicar na imagem
+document.getElementById("profileImg").addEventListener("click", function() {
+    document.getElementById("profileImgInput").click();
+});
+
+// Função para atualizar a imagem de perfil
+function updateProfileImage(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById("profileImg").src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+}
