@@ -71,7 +71,7 @@ function createSingleSolicitationCard({ name, bloodType, image }) {
   imageElement.setAttribute("alt", "Foto do Paciente");
   imageElement.setAttribute(
     "style",
-    "width: 80px; height: 80px; object-fit: cover"
+    "max-width: 80px; max-height: 80px; width: 100%; height: 100%; object-fit: cover;"
   );
 
   card.appendChild(imageElement);
