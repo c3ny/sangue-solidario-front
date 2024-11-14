@@ -1,148 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-      Solicitacões - Sangue Solidário | Conectando vidas por meio da
-      solidariedade
-    </title>
-    <!-- favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="/assets/images/icons/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/assets/images/icons/favicon.svg"
-    />
-    <link rel="shortcut icon" href="/assets/images/icons/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/images/icons/apple-touch-icon.png"
-    />
-    <meta name="apple-mobile-web-app-title" content="SangueSolidário" />
-    <link rel="manifest" href="/assets/images/icons/site.webmanifest" />
-    <!-- css -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/custom.css" />
-    <link rel="stylesheet" href="assets/css/solicitacoes.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    />
-  </head>
-  <body>
-    <header
-      class="d-flex flex-wrap justify-content-between align-items-center py-3 mb-5 fixed-top bg-white shadow p-4"
-    >
-      <!-- Logotipo -->
-      <a
-        href="/"
-        class="d-flex align-items-center link-body-emphasis text-decoration-none me-4"
-      >
-        <img
-          src="assets/images/logo/sangue-main.svg"
-          alt="Sangue Solidário"
-          class="fs-4"
-        />
-      </a>
+<html lang="pt-BR">
 
-      <!-- Campo de pesquisa de cidade para grandes resoluções -->
-      <div
-        class="position-relative d-none d-lg-flex align-items-center me-auto"
-      >
-        <input
-          type="text"
-          class="form-control me-2 searchCity"
-          id="cityInput"
-          placeholder="Informe a cidade, estado"
-        />
-        <button
-          class="btn p-2"
-          id="searchCityBtn"
-          style="background: transparent"
-        >
-          <i class="bi bi-search" style="color: #333"></i>
-        </button>
-        <!-- Lista de sugestões -->
-        <ul
-          id="suggestions"
-          class="list-group position-absolute w-100"
-          style="top: 100%; z-index: 1000; display: none"
-        ></ul>
-      </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    Solicitacões | Sangue Solidário
+  </title>
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/icons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/images/icons/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/images/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="SangueSolidário" />
+  <link rel="manifest" href="/assets/images/icons/site.webmanifest" />
+  <!-- css -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="assets/css/custom.css" />
+  <link rel="stylesheet" href="assets/css/solicitacoes.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
 
-      <!-- Botão de menu hambúrguer em resoluções pequenas (abaixo de 992px) -->
-      <button
-        class="navbar-toggler d-lg-none border-0"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarMenu"
-        aria-controls="navbarMenu"
-        aria-expanded="false"
-        aria-label="Abrir menu"
-      >
-        <span class="navbar-toggler-icon"></span>
+<body>
+  <header class="d-flex flex-wrap justify-content-between align-items-center py-3 mb-5 fixed-top bg-white shadow p-4">
+    <!-- Logotipo -->
+    <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none me-4">
+      <img src="assets/images/logo/sangue-main.svg" alt="Sangue Solidário" class="fs-4" />
+    </a>
+
+    <!-- Campo de pesquisa de cidade para grandes resoluções -->
+    <div class="position-relative d-none d-lg-flex align-items-center me-auto">
+      <input type="text" class="form-control me-2 searchCity" id="cityInput" placeholder="Informe a cidade, estado" />
+      <button class="btn p-2" id="searchCityBtn" style="background: transparent">
+        <i class="bi bi-search" style="color: #333"></i>
       </button>
+      <!-- Lista de sugestões -->
+      <ul id="suggestions" class="list-group position-absolute w-100" style="top: 100%; z-index: 1000; display: none">
+      </ul>
+    </div>
 
-      <!-- Menu colapsável para resoluções menores que 992px -->
-      <nav class="collapse navbar-collapse d-lg-none w-100" id="navbarMenu">
-        <ul class="navbar-nav text-center w-100 my-2">
-          <!-- Campo de pesquisa de cidade centralizado para resoluções menores -->
-          <li class="nav-item w-100">
-            <div class="d-flex justify-content-center align-items-center">
-              <input
-                type="text"
-                class="form-control w-75 me-2 searchCity"
-                id="cityInputMobile"
-                placeholder="Informe a cidade, estado"
-              />
-              <button
-                class="btn p-2"
-                id="searchCityBtnMobile"
-                style="background: transparent"
-              >
-                <i class="bi bi-search" style="color: #333"></i>
-              </button>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-danger">HOME</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-danger">SOBRE NÓS</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-danger">CONTATO</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-danger">DOE</a>
-          </li>
-          <li class="nav-item">
-            <a
-              href="#"
-              class="btn btn-danger"
-              data-bs-toggle="modal"
-              data-bs-target="#loginModal"
-              >LOGIN</a
-            >
-          </li>
-        </ul>
-      </nav>
+    <!-- Botão de menu hambúrguer em resoluções pequenas (abaixo de 992px) -->
+    <button class="navbar-toggler d-lg-none border-0" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Abrir menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <!-- Menu horizontal para resoluções maiores que 992px, alinhado à direita -->
-      <ul class="nav nav-pills d-none d-lg-flex my-2">
+    <!-- Menu colapsável para resoluções menores que 992px -->
+    <nav class="collapse navbar-collapse d-lg-none w-100" id="navbarMenu">
+      <ul class="navbar-nav text-center w-100 my-2">
+        <!-- Campo de pesquisa de cidade centralizado para resoluções menores -->
+        <li class="nav-item w-100">
+          <div class="d-flex justify-content-center align-items-center">
+            <input type="text" class="form-control w-75 me-2 searchCity" id="cityInputMobile"
+              placeholder="Informe a cidade, estado" />
+            <button class="btn p-2" id="searchCityBtnMobile" style="background: transparent">
+              <i class="bi bi-search" style="color: #333"></i>
+            </button>
+          </div>
+        </li>
         <li class="nav-item">
-          <a href="#" class="nav-link text-danger" aria-current="page">HOME</a>
+          <a href="#" class="nav-link text-danger">HOME</a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-danger">SOBRE NÓS</a>
@@ -154,102 +73,97 @@
           <a href="#" class="nav-link text-danger">DOE</a>
         </li>
         <li class="nav-item">
-          <a
-            href="#"
-            class="btn btn-danger"
-            data-bs-toggle="modal"
-            data-bs-target="#loginModal"
-            >LOGIN</a
-          >
+          <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a>
         </li>
       </ul>
-    </header>
-    <main class="container mt-5 py-5">
-      <section class="mt-5">
-        <div class="row align-items-center mb-2">
-          <div class="col-lg-6">
-            <h3>Solicitacoes ao seu redor</h3>
-          </div>
-          <div class="col-lg-6 d-flex justify-content-end">
-            <button class="btn btn-danger px-4">Solicitar</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <input
-              type="text"
-              class="form-control"
-              id="nomeCompleto"
-              placeholder="Nome completo"
-              required
-            />
-          </div>
-        </div>
-        <div class="row flex-lg-row g-5 py-5 mb-5">
-          <div id="solicitationsCards" class="col justify-content-start"></div>
-          <div class="col">
-            <!-- Div para o mapa interativo -->
-            <div id="map" class="map"></div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <div class="bg-danger">
-      <div class="container">
-        <footer class="py-5">
-          <!-- Logotipo centralizado -->
-          <div class="row justify-content-center">
-            <div class="col-12 text-center mb-3">
-              <a
-                href="/"
-                class="d-flex justify-content-center align-items-center mb-3 link-body-emphasis text-decoration-none"
-              >
-                <img
-                  src="assets/images/logo/sangue-white.svg"
-                  alt="Sangue Solidário"
-                  class="fs-4"
-                />
-              </a>
-            </div>
-          </div>
-          <!-- Links centralizados -->
-          <div class="row justify-content-center">
-            <div class="col-12 text-center">
-              <ul class="nav justify-content-center">
-                <li class="nav-item">
-                  <a href="#" class="nav-link text-white" aria-current="page"
-                    >HOME</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link text-white">SOBRE NÓS</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link text-white">CONTATO</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link text-white">DOE</a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    href="#"
-                    class="btn btn-light"
-                    data-bs-toggle="modal"
-                    data-bs-target="#loginModal"
-                    >LOGIN</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </footer>
-      </div>
-    </div>
-    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    </nav>
 
-    <!-- Scripts do mapa -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="./assets/js/map.js"></script>
-    <script src="./assets/js/solicitations.js"></script>
-  </body>
+    <!-- Menu horizontal para resoluções maiores que 992px, alinhado à direita -->
+    <ul class="nav nav-pills d-none d-lg-flex my-2">
+      <li class="nav-item">
+        <a href="#" class="nav-link text-danger" aria-current="page">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-danger">SOBRE NÓS</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-danger">CONTATO</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-danger">DOE</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a>
+      </li>
+    </ul>
+  </header>
+  <main class="container mt-5 py-5">
+    <section class="mt-5">
+      <div class="row align-items-center mb-2">
+        <div class="col-lg-6">
+          <h3>Solicitacoes ao seu redor</h3>
+        </div>
+        <div class="col-lg-6 d-flex justify-content-end">
+          <button class="btn btn-danger px-4">Solicitar</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" id="nomeCompleto" placeholder="Nome completo" required />
+        </div>
+      </div>
+      <div class="row flex-lg-row g-5 py-5 mb-5">
+        <div id="solicitationsCards" class="col justify-content-start"></div>
+        <div class="col">
+          <!-- Div para o mapa interativo -->
+          <div id="map" class="map"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="bg-danger">
+    <div class="container">
+      <footer class="py-5">
+        <!-- Logotipo centralizado -->
+        <div class="row justify-content-center">
+          <div class="col-12 text-center mb-3">
+            <a href="/"
+              class="d-flex justify-content-center align-items-center mb-3 link-body-emphasis text-decoration-none">
+              <img src="assets/images/logo/sangue-white.svg" alt="Sangue Solidário" class="fs-4" />
+            </a>
+          </div>
+        </div>
+        <!-- Links centralizados -->
+        <div class="row justify-content-center">
+          <div class="col-12 text-center">
+            <ul class="nav justify-content-center">
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white" aria-current="page">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">SOBRE NÓS</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">CONTATO</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">DOE</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Scripts do mapa -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="./assets/js/map.js"></script>
+  <script src="./assets/js/solicitations.js"></script>
+</body>
+
 </html>
