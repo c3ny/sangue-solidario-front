@@ -1,0 +1,28 @@
+.avatar{
+    border:#dc3545 solid 4px;
+}
+
+/* Container da barra de status */
+.status-bar-container {
+    width: 100%;
+    height: 25px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+  }
+  
+  /* Barra de preenchimento */
+  .status-bar {
+    height: 100%;
+    background-color: #ce2525;
+    width: 0%; /* Inicialmente vazia */
+    transition: width 0.5s ease-in-out;
+  }
+  
+  /* Texto de status */
+  .status-text {
+    text-align: center;
+    margin-top: 10px;
+  }
