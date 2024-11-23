@@ -9,10 +9,10 @@
 
 p.previa-blog {
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* number of lines to show */
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
+ display: -webkit-box;
+ -webkit-line-clamp: 3; /* número de linhas para exibir */
+         line-clamp: 3; 
+ -webkit-box-orient: vertical;
 }
 
 .searchCity {
@@ -28,4 +28,19 @@ p.previa-blog {
 .searchCity::placeholder {
   color: #9b9b9b;
   font-style: italic;
+}
+
+.searchCity{
+    border: none;
+    border-bottom: 1px solid #666;
+    border-radius: 0;
+    padding: 4px;
+    background-color: #fff;
+    color: #666;
+    width: 200px;
+}
+
+.searchCity::placeholder {
+    color: #9b9b9b;
+    font-style: italic;
 }

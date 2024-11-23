@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sangue Solidário | Conectando vidas por meio da solidariedade</title>
+  <title>Sangue Solidário | Criar Solicitação</title>
   <!-- favicon -->
   <link rel="icon" type="image/png" href="/assets/images/icons/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/assets/images/icons/favicon.svg" />
@@ -83,13 +83,13 @@
           <a href="/" class="nav-link text-danger" aria-current="page">HOME</a>
         </li>
         <li class="nav-item">
-          <a href="#sobre" class="nav-link text-danger">SOBRE NÓS</a>
+          <a href="index.html#sobre" class="nav-link text-danger">SOBRE NÓS</a>
         </li>
         <li class="nav-item">
           <a href="contato.html" class="nav-link text-danger">CONTATO</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link text-danger">DOE</a>
+          <a href="solicitacoes.html" class="nav-link text-danger">DOE</a>
         </li>
         <li class="nav-item">
           <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a>
@@ -97,182 +97,69 @@
       </ul>
     </header>
 
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5 mt-5 mb-3">
-      <div class="col-lg-6 col-12 col-sm-12">
-        <h1 class="display-5 fw-bold mb-3">
-          Seja solidário, <span class="text-danger">doe sangue!</span>
-        </h1>
-        <p class="lead text-justify">
-          Somos a <span class="text-danger">sangue solidário</span> uma
-          plataforma que a plataforma que conecta vidas por meio da
-          solidariedade. Com apenas alguns cliques, você descobre onde sua
-          doação é necessária ou cadastra a sua necessidade.
-        </p>
-        <p>
-          Junte-se a nós nessa missão de amor e empatia e faça parte da
-          corrente que transforma a solidariedade em esperança. Doe sangue,
-          doe vida.
-        </p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <a href="/solicitacoes.html">
-            <button type="button" class="btn btn-danger btn-lg px-4 me-md-2">
-              Ver solicitações
-            </button>
-          </a>
-          <a href="/cadastrar-solicitacao.html">
-            <button type="button" class="btn btn-outline-danger btn-lg px-4">
-              Cadastrar solicitação
-            </button>
-          </a>
-        </div>
-      </div>
-      <div class="col-12 col-sm-12 col-lg-6">
-        <img src="assets/images/topo.jpg" class="d-block mx-lg-auto img-fluid" />
-      </div>
-    </div>
-    <!-- Sessão do Mapa -->
-    <div class="row g-5 row align-items-center mb-5 d-none d-lg-flex py-5 mb-5">
+    <div class="row align-items-center g-5 py-5 mt-5 mb-3">
       <div class="col-12">
-        <h2 class="display-7 fw-bold mb-3">
-          12 hemocentros e 67 pessoas precisam da sua ajuda!
-        </h2>
-        <!-- Div para o mapa interativo -->
-        <div id="map" style="height: 400px"></div>
-      </div>
-    </div>
-    <!-- Div do mapa para resoluções menores que 1006px -->
-    <div class="row d-lg-none mb-5">
-      <div class="col-12">
-          <h4 class="mb-2">Confira as solicitações próximas da sua localização</h4>
-          <div id="map-mobile" style="height: 400px;"></div>
-      </div>
-  </div>
-    <!-- Sessão de Sobre -->
-    <div class="row g-5 py-5 mb-5" id="sobre">
-      <div class="col-12">
-        <h2 class="display-7 fw-bold mb">Sobre a plataforma</h2>
+        <h1 class="display-5 fw-bold mb-3">Crie uma solicitação de doação de sangue</h1>
         <p class="lead">
-          A missão da plataforma é simples, mas poderosa: salvar vidas. Através de uma interface clara e um sistema de localização eficiente, a ferramenta permite que doadores se conectem com quem mais precisa. Assim, a Sangue Solidário atua não só como um facilitadora logística, mas também como um espaço de conscientização e engajamento, incentivando a sociedade a se envolver ativamente na causa e a entender que doar sangue é seguro, necessário e impactante.
+          Preencha as informações necessárias para que doadores possam encontrar sua solicitação e ajudar quem precisa.
         </p>
       </div>
-      <div class="col-lg-6 col-12 col-sm-12">
-        <p>A plataforma <strong>Sangue Solidário</strong> surgiu do desejo de cinco amigos – Caio César, Caio Scudeller, Cássio Bruno, Nicolas Mencacci e Ysrael Moreno – em transformar a maneira como a doação de sangue é vista e acessada no Brasil. Com experiências e conhecimentos variados nas áreas de tecnologia, saúde e comunicação, eles compartilharam o mesmo sonho: criar uma ponte prática e acessível entre quem precisa de sangue e quem deseja doar.</p>
-
-        <p>Percebendo as dificuldades e o desconhecimento que ainda envolvem o ato de doar, os amigos idealizaram a plataforma como uma forma de <strong>desmistificar e facilitar a doação de sangue</strong>. Eles notaram que muitas vezes, quem deseja ajudar não sabe onde nem como começar, e que quem precisa de doações enfrenta dificuldades para alcançar possíveis doadores. Dessa forma, <strong>Sangue Solidário</strong> visa romper com essas barreiras, oferecendo um ambiente intuitivo e acessível, onde cidadãos comuns, hospitais e hemocentros podem compartilhar necessidades e localizar doadores em potencial.</p>
-      </div>
-      <div class="col-lg-6 col-12 col-sm-12">
-        <img src="assets/images/sobre.jpg" class="d-block mx-lg-auto img-fluid" />
+      <div class="col-12">
+        <form action="">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="nome" class="form-label">Nome do paciente</label>
+              <input type="text" class="form-control" id="nome" required>
+            </div>
+            <div class="col-md-6">
+              <label for="telefone" class="form-label">Telefone para contato</label>
+              <input type="text" class="form-control" id="telefone">
+            </div>
+            <div class="col-md-6">
+              <label for="tipoSanguineo" class="form-label">Tipo sanguíneo</label>
+              <select class="form-select" id="tipoSanguineo" required>
+                <option value="" selected disabled>Selecione o tipo sanguíneo</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="quantidade" class="form-label">Quantidade de bolsas</label>
+              <input type="number" class="form-control" id="quantidade" required>
+            </div>
+            <div class="col-md-6">
+              <label for="datainicio" class="form-label">Data de início da solicitação</label>
+              <input type="date" class="form-control" id="datainicio">
+            </div>
+            <div class="col-md-6">
+              <label for="datatermino" class="form-label">Data de término da solicitação</label>
+              <input type="date" class="form-control" id="datatermino">
+            </div>
+            <div class="col-12">
+              <label for="endereco" class="form-label">Endereço para doação</label>
+              <input type="text" class="form-control" id="endereco" required>
+            </div>
+            <div class="col-12">
+              <label for="descricao" class="form-label">Descrição</label>
+              <textarea name="" class="form-control" id="descricao" rows="5" placeholder="Se desejar, adicione uma descrição da solicitação"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Foto do paciente</label>
+              <input class="form-control" type="file" id="formFile">
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-lg btn-danger">Criar solicitação</button>
+            </div>
+        </form>
       </div>
     </div>
-
-    <!-- Sessão do Blog -->
-    <div class="row">
-      <h2 class="display-7 fw-bold mb-3">Se mantenha informado</h2>
-    </div>
-    <div id="blogCarousel" class="carousel slide mb-5 position-relative" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <!-- Grupo 1 de três cards -->
-        <div class="carousel-item active">
-          <div class="row">
-            <div class="col-12 col-md-4 mb-3">
-              <div class="card shadow-sm">
-                <img src="assets/images/blog/01.jpg" alt="" class="card-img-top">
-                <div class="card-body">
-                  <h6 class="fw-bold mb-1">A importância da doação</h6>
-                  <p class="card-text previa-blog">
-                    A doação de sangue é um ato essencial de solidariedade que pode salvar inúmeras
-                    vidas, especialmente em situações de emergência, cirurgias e tratamentos para
-                    doenças graves. Com uma única doação, é possível ajudar até quatro pessoas.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 mb-3">
-              <div class="card shadow-sm">
-                <img src="assets/images/blog/02.jpg" alt="" class="card-img-top">
-                <div class="card-body">
-                  <h6 class="fw-bold mb-1">Quem pode doar?</h6>
-                  <p class="card-text previa-blog">
-                    Para doar sangue, é necessário atender a alguns critérios que garantem a
-                    segurança do doador e do receptor. Podem doar pessoas com boas condições de
-                    saúde, entre 16 e 69 anos.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 mb-3">
-              <div class="card shadow-sm">
-                <img src="assets/images/blog/03.jpg" alt="" class="card-img-top">
-                <div class="card-body">
-                  <h6 class="fw-bold mb-1">A doação no Brasil</h6>
-                  <p class="card-text previa-blog">
-                    No Brasil, as doações de sangue representam uma importante ação de saúde pública
-                    e solidariedade, atendendo milhares de pessoas que dependem desse recurso em
-                    casos de emergência.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Grupo 2 de três cards -->
-        <div class="carousel-item">
-          <div class="row">
-            <div class="col-12 col-md-4 mb-3">
-              <div class="card shadow-sm">
-                <img src="assets/images/blog/04.jpg" alt="" class="card-img-top">
-                <div class="card-body">
-                  <h6 class="fw-bold mb-1">Impacto das Doações</h6>
-                  <p class="card-text previa-blog">
-                    A cada dia, o sangue doado é essencial para diversas situações médicas, como
-                    cirurgias de emergência e tratamentos para doenças crônicas. Doe sangue e faça a
-                    diferença!
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 mb-3">
-              <div class="card shadow-sm">
-                <img src="assets/images/blog/05.jpg" alt="" class="card-img-top">
-                <div class="card-body">
-                  <h6 class="fw-bold mb-1">Doação Regular</h6>
-                  <p class="card-text previa-blog">
-                    A doação regular é fundamental para manter os estoques dos hemocentros. Este ato
-                    simples e seguro pode ser realizado a cada dois ou três meses.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 mb-3">
-              <div class="card shadow-sm">
-                <img src="assets/images/blog/06.jpg" alt="" class="card-img-top">
-                <div class="card-body">
-                  <h6 class="fw-bold mb-1">Tipos Raros</h6>
-                  <p class="card-text previa-blog">
-                    Pessoas com tipos sanguíneos raros são essenciais para manter os estoques de
-                    sangue diversificados. Cada doação é uma esperança a mais para quem precisa.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Botões de navegação -->
-      <button class="carousel-control-prev position-absolute top-50 translate-middle-y rounded-circle bg-danger"
-        style="left: -60px; width: 50px; height: 50px" type="button" data-bs-target="#blogCarousel"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Voltar</span>
-      </button>
-      <button class="carousel-control-next position-absolute top-50 translate-middle-y rounded-circle bg-danger"
-        style="right: -60px; width: 50px; height: 50px" type="button" data-bs-target="#blogCarousel"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Avançar</span>
-      </button>
-    </div>
+  </div>
   </div>
   <!-- Rodapé -->
   <div class="bg-danger">
@@ -292,16 +179,16 @@
           <div class="col-12 text-center">
             <ul class="nav justify-content-center">
               <li class="nav-item">
-                <a href="#" class="nav-link text-white" aria-current="page">HOME</a>
+                <a href="index.html" class="nav-link text-white" aria-current="page">HOME</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link text-white">SOBRE NÓS</a>
+                <a href="index.html#" class="nav-link text-white">SOBRE NÓS</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link text-white">CONTATO</a>
+                <a href="contato.html" class="nav-link text-white">CONTATO</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link text-white">DOE</a>
+                <a href="solicitacoes.html" class="nav-link text-white">DOE</a>
               </li>
               <li class="nav-item">
                 <a href="#" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a>
