@@ -1,6 +1,6 @@
 const cardsPatients = [
   {
-    name: "Paciente Ana M. C.",
+    name: "Paciente Mario Luiz",
     image:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     lat: -23.5075,
@@ -105,6 +105,7 @@ function createSingleSolicitationCard({ name, bloodType, image }) {
   const button = document.createElement("button");
 
   button.setAttribute("class", "btn btn-danger px-4");
+  button.setAttribute("onclick", "window.location.href='visualizar-solicitacao.html';");
   button.textContent = "Quero doar";
 
   card.appendChild(button);
