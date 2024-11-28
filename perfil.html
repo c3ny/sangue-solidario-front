@@ -187,7 +187,7 @@ head>
 
 
         <!-- Últimas Doações -->
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-12">
                 <div class="card shadow-sm p-4">
                     <h4>Últimas doações</h4>
@@ -233,6 +233,35 @@ head>
             </div>
         </div>
 
+         <!-- Suas solicitacoes -->
+         <div class="row">
+            <div class="col-12">
+                <div class="card shadow-sm p-4">
+                    <h4>Suas solicitações</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Tipo Sanguíneo</th>
+                                    <th>Titulo</th>
+                                    <th>Data</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0+</td>
+                                    <td>Ricardo Moraes</td>
+                                    <td>12/10/2024</td>
+                                    <td><a href="#" class="btn btn-sm btn-outline-danger">Fechar Solicitação</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Modal de Edição de Perfil -->
         <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel"
             aria-hidden="true">
@@ -256,11 +285,11 @@ head>
                             <div class="mb-3">
                                 <label for="nomeCompleto" class="form-label">Nome Completo</label>
                                 <input type="text" class="form-control" id="nomeCompleto" value="Heloisa Moraes"
-                                    required>
+                                    >
                             </div>
                             <div class="mb-3">
                                 <label for="bloodType" class="form-label">Tipo Sanguíneo</label>
-                                <select class="form-select" id="tipoSanguineo" required>
+                                <select class="form-select" id="tipoSanguineo" >
                                     <option value="" selected disabled>Selecione o tipo sanguíneo</option>
                                     <option value="A+">A+</option>
                                     <option value="A-">A-</option>
@@ -274,17 +303,17 @@ head>
                             </div>
                             <div class="mb-3">
                                 <label for="telefone" class="form-label">Telefone</label>
-                                <input type="text" class="form-control" id="telefone" value="(11) 98765-4321" required>
+                                <input type="text" class="form-control" id="telefone" value="(11) 98765-4321" >
                             </div>
                             <hr>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email de login</label>
                                 <input type="text" class="form-control" id="email" value="lolomoraes@gmail.com"
-                                    required>
+                                    >
                             </div>
                             <div class="mb-4">
                                 <label for="password" class="form-label">Senha</label>
-                                <input type="password" class="form-control" id="password" value="123456" required>
+                                <input type="password" class="form-control" id="password" value="123456" >
                             </div>
                             <button type="submit" class="btn btn-danger w-100">Salvar Alterações</button>
                         </form>
