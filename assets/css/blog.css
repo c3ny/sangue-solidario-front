@@ -1,5 +1,23 @@
-.imgdestaque{
-    max-height: 400px;
-    width: 100%;
-    object-fit: cover;
+.imgdestaque {
+  max-height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.carousel-control-prev {
+  display: none;
+}
+
+.carousel-control-next {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .carousel-control-prev {
+    display: block;
+  }
+
+  .carousel-control-next {
+    display: block;
+  }
 }
